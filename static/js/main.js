@@ -61,14 +61,17 @@ angular.module('roster', [])
        our fake data resource! */
     s.transformPlayerData = function(orig) {
       return {
-        battingAvg: (0.275 + (Math.random() - 0.5) / 10.0).toFixed(3), // looks weird, but should generate .275 +/- .100 which seems reasonable
+        // battingAvg: 0.275 +/- 0.100
+        battingAvg: (0.275 + (Math.random() - 0.5) / 10.0).toFixed(3),
         dob: orig.dob.split(' ')[0],
         email: orig.email,
+        // hr: 15 +/- 10
         hr: Math.round(15 + (Math.random() - 0.5) * 10),
         id: orig.id,
         name: [orig.name.first, orig.name.last].join(' '),
         phone: orig.phone,
         photo: orig.picture.large,
+        // rbi: 50 +/- 40
         rbi: Math.round(50 + (Math.random() - 0.5) * 40)
       };
     }

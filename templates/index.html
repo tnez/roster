@@ -12,8 +12,8 @@
     <section class="bio" ng-controller="bioCtrl">
       <div class="row">
         <div class="small-8 small-offset-2 medium-6 medium-offset-3 center-align columns">
-          <h2 class="capitalize">{{currentPlayer.name}}</h2>
-          <img src="{{currentPlayer.photo}}">
+          <h2 class="capitalize">{{currentPlayer.name || 'select a player'}}</h2>
+          <img ng-src="{{currentPlayer.photo || '/static/img/placeholder.png'}}" />
           <table>
             <tr>
               <th>BA</th>
@@ -21,9 +21,9 @@
               <th>RBI</th>
             </tr>
             <tr>
-              <td>{{currentPlayer.battingAvg}}</td>
-              <td>{{currentPlayer.hr}}</td>
-              <td>{{currentPlayer.rbi}}</td>
+              <td>{{currentPlayer.battingAvg || '-'}}</td>
+              <td>{{currentPlayer.hr || '-'}}</td>
+              <td>{{currentPlayer.rbi || '-'}}</td>
             </tr>
           </table>
         </div>

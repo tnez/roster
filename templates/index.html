@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
   </head>
   <body ng-app="roster">
+    <section class="bio" ng-controller="bioCtrl">
+      <img src={{currentPlayer.photo}}>
+      <table>
+        <tr>
+          <th>Player Name</th>
+          <th>BA</th>
+          <th>HR</th>
+          <th>RBI</th>
+        </tr>
+        <tr>
+          <td>{{currentPlayer.name}}</td>
+          <td>{{currentPlayer.battingAvg}}</td>
+          <td>{{currentPlayer.hr}}</td>
+          <td>{{currentPlayer.rbi}}</td>
+        </tr>
+      </table>
+    </section>
     <label for="search">Search the table: </label>
     <input id="search" ng-model="searchTerm">
     <table ng-controller="tableCtrl">

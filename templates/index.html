@@ -5,6 +5,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Super Roster</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.12/angular.min.js"></script>
+    <script src="/static/js/main.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
     <link rel="stylesheet" href="/static/main.css" />
   </head>
@@ -31,8 +33,7 @@
     </section>
     <section class="search row">
       <div class="small-12 large columns">
-        <input id="search" ng-model="searchTerm">
-        <span class="label">Search</span>
+        <input id="search" ng-model="searchTerm" placeholder="search the table">
       </div>
     </section>
     <section class="table row">
@@ -53,7 +54,5 @@
         </table>
       </div>
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.12/angular.min.js"></script>
-    <script src="/static/js/main.js"></script>
   </body>
 </html>

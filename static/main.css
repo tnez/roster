@@ -14,8 +14,8 @@ section.bio {
 section.bio img {
   border-radius: 50%;
   margin-bottom: 1em;
-  max-height: 12em;
-  max-width: 12em;
+  max-height: 128px;
+  max-width: 128px;
   text-align: center;
 }
 
@@ -24,13 +24,11 @@ section.bio table tbody tr:nth-child(even) {
   background: #2199E8;
 }
 
-section.search {
-  font-size: 2em;
-  margin-bottom: 1em;
-}
-
-section.search .label {
-  font-size: 1em;
+section.search input {
+  background-color: #F1F1F1;
+  padding: 0.66em;
+  max-width: 24em;
+  width: 100%;
 }
 
 th { text-align: left; }

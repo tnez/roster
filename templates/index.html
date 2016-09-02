@@ -7,8 +7,12 @@
     <title>tnez-roster</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
   </head>
-  <body>
-    <p>yo yo yo (from template)</p>
-    <script src="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.js"></script>
+  <body ng-app="roster">
+    <div ng-controller="tableCtrl">
+      <h1>Table</h1>
+      <p>{{msg}}</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.12/angular.min.js"></script>
+    <script src="/static/js/main.js"></script>
   </body>
 </html>

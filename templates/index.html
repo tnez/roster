@@ -4,43 +4,51 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tnez-roster</title>
+    <title>Super Roster</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.3/foundation.min.css" />
+    <link rel="stylesheet" href="/static/main.css" />
   </head>
   <body ng-app="roster">
     <section class="bio" ng-controller="bioCtrl">
-      <img src={{currentPlayer.photo}}>
-      <table>
-        <tr>
-          <th>Player Name</th>
-          <th>BA</th>
-          <th>HR</th>
-          <th>RBI</th>
-        </tr>
-        <tr>
-          <td>{{currentPlayer.name}}</td>
-          <td>{{currentPlayer.battingAvg}}</td>
-          <td>{{currentPlayer.hr}}</td>
-          <td>{{currentPlayer.rbi}}</td>
-        </tr>
-      </table>
+      <div class="row">
+        <div class="small-6 columns">
+          <h2>{{currentPlayer.name}}</h2>
+          <dl>
+            <dt>BA</dt>
+            <dd>{{currentPlayer.battingAvg}}</dd>
+            <dt>HR</dt>
+            <dd>{{currentPlayer.hr}}</dd>
+            <dt>RBI</dt>
+            <dd>{{currentPlayer.rbi}}</dd>
+          </dl>
+        </div>
+        <img src="{{currentPlayer.photo}}">
+      </div>
     </section>
-    <label for="search">Search the table: </label>
-    <input id="search" ng-model="searchTerm">
-    <table ng-controller="tableCtrl">
-      <tr>
-        <th>Player Name</th>
-        <th>Phone Number</th>
-        <th>Email Address</th>
-        <th>Date of Birth</th>
-      </tr>
-      <tr ng-repeat="player in players | filter: searchTerm">
-        <td>{{[player.name.first, player.name.last].join(' ')}}</td>
-        <td>{{player.phone}}</td>
-        <td>{{player.email}}</td>
-        <td>{{player.dob}}</td>
-      </tr>
-    </table>
+    <section class="search row">
+      <div class="small-12 large columns">
+        <input id="search" ng-model="searchTerm">
+        <span class="label">Search</span>
+      </div>
+    </section>
+    <section class="table row">
+      <div class="small-12 columns">
+        <table ng-controller="tableCtrl">
+          <tr>
+            <th>Player Name</th>
+            <th>Phone Number</th>
+            <th>Email Address</th>
+            <th>Date of Birth</th>
+          </tr>
+          <tr ng-repeat="player in players | filter: searchTerm">
+            <td>{{[player.name.first, player.name.last].join(' ')}}</td>
+            <td>{{player.phone}}</td>
+            <td>{{player.email}}</td>
+            <td>{{player.dob}}</td>
+          </tr>
+        </table>
+      </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.12/angular.min.js"></script>
     <script src="/static/js/main.js"></script>
   </body>

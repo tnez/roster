@@ -3,11 +3,11 @@ angular.module('roster', [])
   /* Handle the concerns of the bio section */
   .controller('bioCtrl', function($scope, playersService) {
     $scope.currentPlayer = {
-      name: "player one",
-      photo: "https://placehold.it/250x250",
-      battingAvg: ".324",
-      hr: 24,
-      rbi: 71
+      name: "No Player Selected",
+      photo: "https://placehold.it/150x150",
+      battingAvg: "-",
+      hr: "-",
+      rbi: "-"
     }
   })
 

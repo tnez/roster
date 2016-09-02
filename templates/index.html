@@ -12,7 +12,7 @@
     <section class="bio" ng-controller="bioCtrl">
       <div class="row">
         <div class="small-6 columns">
-          <h2>{{currentPlayer.name}}</h2>
+          <h2 class="capitalize">{{currentPlayer.name}}</h2>
           <dl>
             <dt>BA</dt>
             <dd>{{currentPlayer.battingAvg}}</dd>
@@ -40,8 +40,8 @@
             <th>Email Address</th>
             <th>Date of Birth</th>
           </tr>
-          <tr ng-repeat="player in players | filter: searchTerm">
-            <td>{{[player.name.first, player.name.last].join(' ')}}</td>
+          <tr ng-repeat="player in players | filter: searchTerm" ng-click="selectPlayer($index)">
+            <td class="capitalize">{{player.name}}</td>
             <td>{{player.phone}}</td>
             <td>{{player.email}}</td>
             <td>{{player.dob}}</td>

@@ -29,3 +29,5 @@ section.search .label {
 }
 
 th { text-align: left; }
+
+.capitalize { text-transform: capitalize; }

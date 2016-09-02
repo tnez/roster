@@ -6,17 +6,22 @@ section {
 
 section.bio {
   padding-top: 2em;
-  height: 20em;
+  height: 21em;
   background: #2199E8;
-  color: #eee;
+  color: white;
 }
 
 section.bio img {
   border-radius: 50%;
-  float: right;
+  margin-bottom: 1em;
   max-height: 12em;
   max-width: 12em;
-  margin-top: 1.66em;
+  text-align: center;
+}
+
+section.bio tr,
+section.bio table tbody tr:nth-child(even) {
+  background: #2199E8;
 }
 
 section.search {
@@ -30,4 +35,13 @@ section.search .label {
 
 th { text-align: left; }
 
+.clickable:hover {
+  background: #2199E8;
+  color: white;
+  cursor: pointer;
+}
+
 .capitalize { text-transform: capitalize; }
+
+.center-align { text-align: center; }
+.center-align th { text-align: center; }

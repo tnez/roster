@@ -44,7 +44,7 @@
             <th class="hide-for-small-only">Email Address</th>
             <th class="hide-for-small-only">Date of Birth</th>
           </tr>
-          <tr class="clickable" ng-repeat="player in players | filter: searchTerm" ng-click="selectPlayer($index)">
+          <tr class="clickable" ng-repeat="player in players | filter: searchTerm" ng-click="selectPlayer(player.id)">
             <td class="capitalize">{{player.name}}</td>
             <td>{{player.phone}}</td>
             <td class="hide-for-small-only">{{player.email}}</td>

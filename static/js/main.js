@@ -14,7 +14,6 @@ angular.module('roster', [])
     local scope */
     $scope.$watch(function() { return playersService.currentPlayerId; },
       function(newValue, oldValue) {
-        console.log("newValue:", newValue, "oldValue:", oldValue);
         $scope.currentPlayer = playersService.getPlayer(newValue);
       }
     );
@@ -53,7 +52,7 @@ angular.module('roster', [])
 
     /* Return a player by ID */
     s.getPlayer = function(id) {
-      return s.players[id];
+      return s.players.find(function(player) { return player.id === id; })
     };
 
     /* Given raw player data, transform it to something more
@@ -63,13 +62,14 @@ angular.module('roster', [])
     s.transformPlayerData = function(orig) {
       return {
         battingAvg: (0.275 + (Math.random() - 0.5) / 10.0).toFixed(3), // looks weird, but should generate .275 +/- .100 which seems reasonable
-        hr: Math.round(15 + (Math.random() - 0.5) * 10),
-        rbi: Math.round(50 + (Math.random() - 0.5) * 40),
         dob: orig.dob.split(' ')[0],
         email: orig.email,
+        hr: Math.round(15 + (Math.random() - 0.5) * 10),
+        id: orig.id,
         name: [orig.name.first, orig.name.last].join(' '),
         phone: orig.phone,
-        photo: orig.picture.large
+        photo: orig.picture.large,
+        rbi: Math.round(50 + (Math.random() - 0.5) * 40)
       };
     }
   })
